@@ -3,9 +3,9 @@
 cd $(dirname $0)
 
 # Fetch repositories
-repositories=$(curl -L https://api.github.com/users/maibornwolff/repos)
+repositories=$(curl -s -L https://api.github.com/users/maibornwolff/repos)
 echo $repositories > repositories.json
 
 # Fetch members
-members=$(curl -L https://api.github.com/users/maibornwolff/repos)
+members=$(curl -s -L https://api.github.com/orgs/maibornwolff/members)
 echo $members > members.json
