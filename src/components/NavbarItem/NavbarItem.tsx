@@ -1,17 +1,19 @@
 import React from 'react';
 
-interface Props {
-    linkTo: string;
-    DisplayText: string;
-}
-
-const NavbarItem: React.FC<Props> = (props) => {
+const NavbarItem: React.FC = () => {
     return (
-        <li className="nav-item">
-            <a className="nav-link" href={props.linkTo}>
-                {props.DisplayText}
-            </a>
-        </li>
+        <ul className="navbar-nav mr-auto">
+            <li className="nav-item">
+                <a className="nav-link" href="/">
+                    Open Source Home
+                </a>
+            </li>
+            <li className="nav-item">
+                <a className="nav-link" href="https://www.maibornwolff.de">
+                    Homepage
+                </a>
+            </li>
+        </ul>
     );
 };
 

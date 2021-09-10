@@ -5,6 +5,8 @@ import OpenSourcedProjects from './components/OpenSourcedProjects/OpenSourcedPro
 import './components/NavbarToggler/NavbarToggler';
 import React from 'react';
 import NavbarToggler from './components/NavbarToggler/NavbarToggler';
+import ProjectsShown from './components/ProjectsShown/ProjectsShown';
+import NavbarItem from './components/NavbarItem/NavbarItem';
 
 function App() {
     return (
@@ -19,22 +21,12 @@ function App() {
                         >
                             MaibornWolff GmbH
                         </a>
-                        <NavbarToggler></NavbarToggler>
+                        <NavbarToggler />
                         <div
                             className="collapse navbar-collapse"
                             id="navbar-maibornwolff-opensource"
                         >
-                            <ul className="navbar-nav mr-auto">
-                                <li className="nav-item"></li>
-                                <li className="nav-item">
-                                    <a
-                                        className="nav-link"
-                                        href="https://www.maibornwolff.de"
-                                    >
-                                        Homepage
-                                    </a>
-                                </li>
-                            </ul>
+                            <NavbarItem />
                         </div>
                     </nav>
                 </header>
@@ -44,26 +36,7 @@ function App() {
                             <h1 className="jumbotron-heading">
                                 Open Source @ MaibornWolff GmbH
                             </h1>
-                            <p className="lead text-muted">
-                                We love Open Source and want to give back with
-                                projects like{' '}
-                                <a
-                                    target="_blank"
-                                    href="https://github.com/MaibornWolff/clean-air"
-                                    rel="noreferrer"
-                                >
-                                    CleanAir
-                                </a>{' '}
-                                and{' '}
-                                <a
-                                    target="_blank"
-                                    href="https://github.com/MaibornWolff/codecharta"
-                                    rel="noreferrer"
-                                >
-                                    CodeCharta
-                                </a>
-                                .
-                            </p>
+                            <ProjectsShown />
                         </div>
                     </section>
 
