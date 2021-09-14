@@ -1,12 +1,13 @@
 import './App.css';
 import './bootstrap.min.css';
 
-import OpenSourcedProjects from './components/OpenSourcedProjects/OpenSourcedProjects';
-import './components/NavbarToggler/NavbarToggler';
-import React from 'react';
-import NavbarToggler from './components/NavbarToggler/NavbarToggler';
-import ProjectsShown from './components/ProjectsShown/ProjectsShown';
 import NavbarItem from './components/NavbarItem/NavbarItem';
+import NavbarToggler from './components/NavbarToggler/NavbarToggler';
+import OpenSourcedProjects from './components/OpenSourcedProjects/OpenSourcedProjects';
+import ProjectsShown from './components/ProjectsShown/ProjectsShown';
+import React from 'react';
+import SearchFieldWrapper from './components/SearchFieldWrapper/SearchFieldWrapper';
+import logo from './maibornwolff-logo.png';
 
 function App() {
     return (
@@ -15,27 +16,36 @@ function App() {
                 <header>
                     <div id="top-of-page"></div>
                     <nav className="navbar navbar-expand-sm navbar-light bg-light">
-                        <a
-                            className="navbar-brand"
-                            href="https://www.maibornwolff.de"
-                        >
-                            MaibornWolff GmbH
-                        </a>
-                        <NavbarToggler />
-                        <div
-                            className="collapse navbar-collapse"
-                            id="navbar-maibornwolff-opensource"
-                        >
-                            <NavbarItem />
+                        <div className="navbar container">
+                            <a
+                                className="navbar-brand"
+                                href="https://www.maibornwolff.de"
+                            >
+                                <img src={logo} alt="maibornwolffs logo"></img>
+                            </a>
+                            <div className="navbar-right-content">
+                                <NavbarToggler />
+                                <div
+                                    className="collapse navbar-collapse"
+                                    id="navbar-maibornwolff-opensource"
+                                >
+                                    <NavbarItem />
+                                </div>
+                                <SearchFieldWrapper />
+                            </div>
                         </div>
                     </nav>
                 </header>
                 <main role="main">
                     <section className="jumbotron text-center">
                         <div className="container">
-                            <h1 className="jumbotron-heading">
-                                Open Source @ MaibornWolff GmbH
-                            </h1>
+                            <h2 className="jumbotron-heading">
+                                Open Source at MaibornWolff GmbH
+                            </h2>
+                        </div>
+                    </section>
+                    <section className="grey-info-box">
+                        <div className="container">
                             <ProjectsShown />
                         </div>
                     </section>

@@ -4,9 +4,14 @@ const NavbarItem: React.FC = () => {
     return (
         <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-                <a className="nav-link" href="/">
+                <button
+                    className="source-home-button nav-link"
+                    onClick={() => {
+                        window.location.href = '/';
+                    }}
+                >
                     Open Source Home
-                </a>
+                </button>
             </li>
             <li className="nav-item">
                 <a className="nav-link" href="https://www.maibornwolff.de">

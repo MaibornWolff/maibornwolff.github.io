@@ -2,7 +2,7 @@ import React from 'react';
 
 const ProjectsShown: React.FC = () => {
     return (
-        <p className="lead text-muted">
+        <p className="lead">
             We love Open Source and want to give back with projects like{' '}
             <a
                 target="_blank"

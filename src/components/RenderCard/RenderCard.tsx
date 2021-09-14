@@ -1,4 +1,5 @@
-import './RenderCard.css';
+import './RenderCard.scss';
+import '../../bootstrap.min.css';
 
 import React from 'react';
 import Repository from '../utils';
