@@ -17,7 +17,7 @@ const OpenSourcedProjects = () => {
         const data = json.filter((repo) => !repo.archived);
         setData(data);
         dispatch(setIsRendered());
-    }, []);
+    }, [dispatch]);
 
     return (
         <>

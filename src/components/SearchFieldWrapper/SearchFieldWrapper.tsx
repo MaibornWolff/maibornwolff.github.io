@@ -38,6 +38,11 @@ const SearchFieldWrapper = () => {
 
         let index2 = index;
         for (; index2 < array.length; index2++) {
+            if (index2 > 0 && index2 === index) {
+                (array[index - 1] as HTMLElement).classList.remove(
+                    'attention-fade'
+                );
+            }
             if (regexp.test(array[index2].innerHTML)) {
                 array[index2].scrollIntoView({
                     behavior: 'smooth',
@@ -45,14 +50,14 @@ const SearchFieldWrapper = () => {
                     inline: 'center',
                 });
                 (array[index2] as HTMLElement).classList.add('attention-fade');
-                setIndex(index2);
+                setIndex(index2 + 1);
                 return;
             }
         }
 
-        if (index2 > 0) {
+        if (index2 === array.length) {
+            index2 = 0;
             setIndex(0);
-            onSearch(value);
             return;
         }
 

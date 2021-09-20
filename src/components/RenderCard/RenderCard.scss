@@ -46,7 +46,7 @@
     color: rgba(255, 255, 255, 0.4) !important;
 }
 .card-text {
-    color: white !important;
+    color: white;
 }
 .card-text:last-child {
     margin-bottom: 0;
@@ -73,7 +73,7 @@
         color: #ffffff;
     }
     50% {
-        color: #ad301b;
+        color: #444444;
     }
     100% {
         color: #ffffff;
@@ -81,6 +81,6 @@
 }
 
 .attention-fade {
-    -o-animation: fadeIt 1s ease-in-out;
-    animation: fadeIt 1s ease-in-out;
+    -o-animation: fadeIt 2s ease-in-out;
+    animation: fadeIt 2s ease-in-out;
 }

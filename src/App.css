@@ -40,8 +40,8 @@
 .jumbotron {
     padding-top: 3rem;
     padding-bottom: 3rem;
-    margin-bottom: 0;
     background-color: #fff;
+    z-index: 1;
 }
 @media (min-width: 768px) {
     .jumbotron {
@@ -53,17 +53,29 @@
 .jumbotron p:last-child {
     margin-bottom: 0;
 }
+@media (min-width: 1100px) {
+    .jumbotron-heading {
+        font-size: 80px !important;
+    }
+}
+@media (min-width: 720px) {
+    .jumbotron-heading {
+        font-size: 60px !important;
+    }
+}
 
 .jumbotron-heading {
     font-weight: 300;
-    font-size: 80px;
+    font-size: 50px;
     color: white;
     line-height: normal;
     text-align: center;
 }
 
 .jumbotron .container {
+    position: relative;
     margin: 0 auto;
+    z-index: 1;
 }
 
 footer {
@@ -73,4 +85,38 @@ footer {
 
 footer p {
     margin-bottom: 0.25rem;
+}
+.react-parallax-bgimage {
+    position: absolute;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    background-size: 120% auto;
+    z-index: -1;
+}
+.bgimage {
+    position: absolute;
+    background-position: top right;
+    left: auto;
+    right: auto;
+    bottom: 0;
+    height: 70vh;
+    width: 100%;
+    z-index: -1;
+}
+.parallax-container {
+    position: relative;
+    overflow: hidden;
+    height: 60vh;
+    width: 100%;
+}
+.mwlogo {
+    max-width: 119px;
+    max-height: auto;
+}
+@media (max-width: 720px) {
+    .mwlogo {
+        max-width: 60px !important;
+        max-height: auto !important;
+    }
 }
