@@ -373,9 +373,19 @@ h6,
     font-size: 1rem;
 }
 .lead {
-    font-size: 1.25rem;
+    font-size: 0.8rem;
     font-weight: 300;
     text-align: center;
+}
+@media (min-width: 540px) {
+    .lead {
+        font-size: 1rem;
+    }
+}
+@media (min-width: 720px) {
+    .lead {
+        font-size: 1.25rem;
+    }
 }
 .display-1 {
     font-size: 6rem;
@@ -4257,7 +4267,7 @@ input[type='button'].btn-block {
     align-items: center;
 }
 .navbar-toggler {
-    padding: 0.25rem 0.75rem;
+    padding: 0.1rem 0.75rem;
     font-size: 1.25rem;
     line-height: 1;
     background-color: transparent;

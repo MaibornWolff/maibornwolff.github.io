@@ -1,0 +1,13 @@
+.list-container:not(:empty) {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #666666;
+    border-radius: 2px;
+    display: flex;
+    flex-flow: column nowrap;
+    z-index: 2;
+    padding: 10px;
+}
+.dd-list {
+    padding-bottom: 10px;
+}

@@ -53,25 +53,34 @@
 .jumbotron p:last-child {
     margin-bottom: 0;
 }
-@media (min-width: 1100px) {
+
+.jumbotron-heading {
+    font-weight: 300;
+    font-size: 20px;
+    color: white !important;
+    line-height: normal;
+    text-align: center;
+}
+@media (min-width: 400px) {
     .jumbotron-heading {
-        font-size: 80px !important;
+        font-size: 30px;
+    }
+}
+@media (min-width: 480px) {
+    .jumbotron-heading {
+        font-size: 45px;
     }
 }
 @media (min-width: 720px) {
     .jumbotron-heading {
-        font-size: 60px !important;
+        font-size: 60px;
     }
 }
-
-.jumbotron-heading {
-    font-weight: 300;
-    font-size: 50px;
-    color: white;
-    line-height: normal;
-    text-align: center;
+@media (min-width: 1100px) {
+    .jumbotron-heading {
+        font-size: 80px;
+    }
 }
-
 .jumbotron .container {
     position: relative;
     margin: 0 auto;
@@ -107,8 +116,18 @@ footer p {
 .parallax-container {
     position: relative;
     overflow: hidden;
-    height: 60vh;
+    height: 30vh;
     width: 100%;
+}
+@media (min-width: 480px) {
+    .parallax-container {
+        height: 45vh;
+    }
+}
+@media (min-width: 720px) {
+    .parallax-container {
+        height: 55vh;
+    }
 }
 .mwlogo {
     max-width: 119px;

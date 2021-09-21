@@ -1,6 +1,7 @@
 .card-columns .card {
     margin-bottom: 0.75rem;
     display: flex;
+    width: 100%;
 }
 @media (min-width: 576px) {
     .card-columns {
@@ -15,6 +16,15 @@
         orphans: 1;
         widows: 1;
     }
+}
+
+@media (min-width: 720px) {
+    .card-columns .card {
+        display: flex;
+        width: 45%;
+    }
+}
+@media (min-width: 1200px) {
     .card-columns .card {
         display: flex;
         width: 30%;

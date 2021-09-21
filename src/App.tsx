@@ -2,12 +2,12 @@ import './App.css';
 import './bootstrap.min.css';
 
 import NavbarItem from './components/NavbarItem/NavbarItem';
-import NavbarToggler from './components/NavbarToggler/NavbarToggler';
 import OpenSourcedProjects from './components/OpenSourcedProjects/OpenSourcedProjects';
 import ProjectsShown from './components/ProjectsShown/ProjectsShown';
 import React from 'react';
 import SearchFieldWrapper from './components/SearchFieldWrapper/SearchFieldWrapper';
 import ParallaxWithOverlay from './components/ParallaxWithOverlay/ParallaxWithOverlay';
+import DropDown from './components/DropDown/DropDown';
 
 import logo from './maibornwolff-logo.png';
 //import sleepyCat from './sleepy-cat.jpg'; //Back-up Picture because... You can never have too many cat pictures
@@ -34,7 +34,7 @@ function App() {
                                 {/* shows the maibornwolff logo at the top left corner. When clicked links to maibornwolff.de*/}
                             </a>
                             <div className="navbar-right-content">
-                                <NavbarToggler /> {/* see components folder */}
+                                <DropDown /> {/* see components folder */}
                                 <div
                                     className="collapse navbar-collapse"
                                     id="navbar-maibornwolff-opensource"
