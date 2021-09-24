@@ -1,17 +1,17 @@
 import './App.css';
 import './bootstrap.min.css';
 
+import DropDown from './components/DropDown/DropDown';
 import NavbarItem from './components/NavbarItem/NavbarItem';
 import OpenSourcedProjects from './components/OpenSourcedProjects/OpenSourcedProjects';
+import ParallaxWithOverlay from './components/ParallaxWithOverlay/ParallaxWithOverlay';
 import ProjectsShown from './components/ProjectsShown/ProjectsShown';
 import React from 'react';
 import SearchFieldWrapper from './components/SearchFieldWrapper/SearchFieldWrapper';
-import ParallaxWithOverlay from './components/ParallaxWithOverlay/ParallaxWithOverlay';
-import DropDown from './components/DropDown/DropDown';
-
 import logo from './maibornwolff-logo.png';
-//import sleepyCat from './sleepy-cat.jpg'; //Back-up Picture because... You can never have too many cat pictures
 import windowCats from './window-cats.jpg';
+
+//import sleepyCat from './sleepy-cat.jpg'; //Back-up Picture because... You can never have too many cat pictures
 
 function App() {
     return (

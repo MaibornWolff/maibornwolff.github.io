@@ -5,72 +5,64 @@ import { selectIsRendered } from '../OpenSourcedProjects/openSourceProjectsSlice
 import { useSelector } from 'react-redux';
 
 const SearchFieldWrapper = () => {
+    //A search bar to search the site for content
     const [index, setIndex] = useState<number>(0);
 
     const [array, setArray] = useState<Array<Element>>();
 
-    const isRendered = useSelector(selectIsRendered);
+    const [resultArray, setResultArray] = useState<Array<Element>>();
+
+    const isRendered = useSelector(selectIsRendered); //checks if the Project-Cards are rendered, before running the following code
 
     useEffect(() => {
         const cardArray = [
-            document.getElementsByClassName('card-title'),
-            document.getElementsByClassName('card-subtitle'),
+            document.getElementsByClassName('card-title'), //saves every Element of every class, that the search-term should search in,
+            document.getElementsByClassName('card-subtitle'), //in an array.
             document.getElementsByClassName('card-text'),
         ];
 
-        const spreadedArray = Array<Element>();
+        const spreadedArray = Array<Element>(); //creates a new Array of the type "Element"
 
         for (let j = 0; j < cardArray.length; j++) {
+            //turns the 3-dimensional Array from earlier, into a 1-dimensional Array
             for (let i = 0; i < cardArray[j].length; i++) {
                 spreadedArray.push(cardArray[j][i]);
             }
         }
 
-        setArray(spreadedArray);
-    }, [isRendered]);
+        setArray(spreadedArray); //saves spreadedArray into the "global" Array
+    }, [isRendered]); //sets the depency of "isRendered"
 
     const onSearch = (value: string) => {
         if (typeof array === 'undefined') {
+            //if useEffect didnt run yet, array will be undefined. This prevents the code from running in that case
             return;
         }
 
-        const regexp = new RegExp(value, 'i');
+        const regexp = new RegExp(value, 'i'); //makes value case-insensitive
+
+        const newResultArray = [];
 
         let index2 = index;
         for (; index2 < array.length; index2++) {
-            if (index2 > 0 && index2 === index) {
-                (array[index - 1] as HTMLElement).classList.remove(
-                    'attention-fade'
-                );
-            }
             if (regexp.test(array[index2].innerHTML)) {
-                array[index2].scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center',
-                    inline: 'center',
-                });
-                (array[index2] as HTMLElement).classList.add('attention-fade');
-                setIndex(index2 + 1);
-                return;
+                newResultArray.push(array[index2]);
             }
         }
 
-        if (index2 === array.length) {
-            index2 = 0;
-            setIndex(0);
-            return;
-        }
+        setResultArray(newResultArray);
 
-        console.log('Not found');
+        return;
     };
 
     return (
         <SearchField
-            placeholder="Suche..."
+            placeholder="Search..."
             onSearchClick={onSearch}
             onEnter={onSearch}
             classNames="search-bar"
         />
+        //an installed component for the search bar itself, when enter or the search button is pressed, it will execute "onSearch"
     );
 };
 

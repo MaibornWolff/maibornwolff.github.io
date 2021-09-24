@@ -139,3 +139,6 @@ footer p {
         max-height: auto !important;
     }
 }
+.dark-mode-toggle {
+    display: block;
+}

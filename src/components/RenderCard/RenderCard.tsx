@@ -8,6 +8,8 @@ interface Props {
     repo: Repository;
 }
 
+//Takes an array, sent as a prop from the OpenSourcedProjects component and displays it as a "Card"
+
 const RenderCard: React.FC<Props> = (props) => {
     return (
         <div className="card border-primary mb-3">

@@ -74,9 +74,15 @@ body {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #666666;
     text-align: left;
+}
+body.light-mode {
+    color: #666666;
     background-color: white;
+}
+body.dark-mode {
+    color: white;
+    background-color: #666666;
 }
 [tabindex='-1']:focus {
     outline: 0 !important;
@@ -377,7 +383,7 @@ h6,
     font-weight: 300;
     text-align: center;
 }
-@media (min-width: 540px) {
+@media (min-width: 500px) {
     .lead {
         font-size: 1rem;
     }

@@ -14,12 +14,13 @@ const OpenSourcedProjects = () => {
 
     useEffect(() => {
         const json = repositories;
-        const data = json.filter((repo) => !repo.archived);
-        setData(data);
-        dispatch(setIsRendered());
+        const data = json.filter((repo) => !repo.archived); //saves every array of Repository.json (repo) which isnt archived into data
+        setData(data); //saves the current data array into the global data array
+        dispatch(setIsRendered()); //tells the store that OpenSourceProjects has rendered, and can now be used for other components
     }, [dispatch]);
 
     return (
+        //sends every data array to be rendered by the RenderCard component
         <>
             <h3 id="headline-opensource-projects">Open sourced Projects</h3>
             <div id="maibornwolff-opensource-projects" className="card-columns">

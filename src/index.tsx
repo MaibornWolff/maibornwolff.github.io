@@ -8,6 +8,8 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import store from './app/store';
 
+//renders the app component in the HTML Element thi the id root
+//The Provider Element is needed for the use of "stores"
 ReactDOM.render(
     <Provider store={store}>
         <React.StrictMode>

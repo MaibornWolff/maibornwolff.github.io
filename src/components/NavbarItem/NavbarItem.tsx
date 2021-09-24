@@ -1,7 +1,9 @@
 import React from 'react';
+import DarkMode from '../DarkMode/DarkMode';
 
 const NavbarItem: React.FC = () => {
     return (
+        //returns 2 Links that will be shown on the Navigation-Bar
         <ul className="navbar-nav mr-auto">
             <li className="nav-item">
                 <button
@@ -17,6 +19,9 @@ const NavbarItem: React.FC = () => {
                 <a className="nav-link" href="https://www.maibornwolff.de">
                     Homepage
                 </a>
+            </li>
+            <li className="nav-item">
+                <DarkMode />
             </li>
         </ul>
     );
