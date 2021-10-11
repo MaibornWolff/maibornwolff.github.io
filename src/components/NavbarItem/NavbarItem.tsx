@@ -1,5 +1,4 @@
 import React from 'react';
-import DarkMode from '../DarkMode/DarkMode';
 
 const NavbarItem: React.FC = () => {
     return (
@@ -7,7 +6,7 @@ const NavbarItem: React.FC = () => {
         <ul className="navbar-nav mr-auto">
             <li className="nav-item">
                 <button
-                    className="source-home-button nav-link"
+                    className="source-home-button nav-link light-mode"
                     onClick={() => {
                         window.location.href = '/';
                     }}
@@ -16,13 +15,14 @@ const NavbarItem: React.FC = () => {
                 </button>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="https://www.maibornwolff.de">
+                <a
+                    className="nav-link light-mode"
+                    href="https://www.maibornwolff.de"
+                >
                     Homepage
                 </a>
             </li>
-            <li className="nav-item">
-                <DarkMode />
-            </li>
+            <li className="nav-item"></li>
         </ul>
     );
 };

@@ -10,7 +10,7 @@
         <meta name="author" content="MaibornWolff GmbH" />
         <meta
             name="description"
-            content="Web site created using create-react-app"
+            content="MaibornWolffs Open Source Projects, with links to their GitHub repos"
         />
         <link rel="apple-touch-icon-precomposed" href="./favicon.ico" />
         <link rel="stylesheet" href="../src/App.css" />
@@ -27,8 +27,30 @@
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+        <link rel="manifest" href="./manifest.json" />
         <link rel="image" href="../src/maibornwolff-logo.png" />
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function () {
+                    navigator.serviceWorker.register('sw.js').then(
+                        function (registration) {
+                            // Registration was successful
+                            console.log(
+                                'ServiceWorker registration successful with scope: ',
+                                registration.scope
+                            );
+                        },
+                        function (err) {
+                            // registration failed :(
+                            console.log(
+                                'ServiceWorker registration failed: ',
+                                err
+                            );
+                        }
+                    );
+                });
+            }
+        </script>
         <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -40,9 +62,11 @@
     -->
         <title>Open Source at MaibornWolff GmbH</title>
     </head>
-    <body>
+    <body class="light-mode">
         <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="loader" class="loader"></div>
         <div id="root"></div>
+
         <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

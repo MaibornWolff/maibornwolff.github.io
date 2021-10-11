@@ -22,7 +22,7 @@ const RenderCard: React.FC<Props> = (props) => {
                 <a
                     target="_blank"
                     href={props.repo.html_url}
-                    className="card-link"
+                    className="card-link light-mode"
                     rel="noreferrer"
                 >
                     Repo

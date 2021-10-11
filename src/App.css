@@ -139,6 +139,64 @@ footer p {
         max-height: auto !important;
     }
 }
+.search-bar.light-mode {
+    background-color: white;
+    color: #666666;
+}
+.search-bar.dark-mode {
+    background-color: #282828;
+    color: #ffffff;
+}
 .dark-mode-toggle {
-    display: block;
+    margin: auto 10px;
+}
+path {
+    margin: auto auto;
+}
+.react-search-field-input.dark-mode {
+    background-color: #464646;
+    color: white;
+}
+.react-search-field-input.light-mode {
+    background-color: white;
+    color: #666666;
+}
+
+.invisible {
+    opacity: 0;
+}
+.cat-error-img {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-self: center;
+
+    justify-content: space-evenly;
+    -webkit-column-count: 1;
+    column-count: 1;
+}
+.loader {
+    position: absolute;
+    top: calc(50% - 4em);
+    left: calc(50% - 4em);
+    width: 6em;
+    height: 6em;
+    border: 1.1em solid rgba(0, 0, 0, 0.2);
+    border-left: 1.1em solid #000000;
+    border-radius: 50%;
+    animation: load8 1.1s infinite linear;
+    transition: opacity 0.1s;
+}
+
+.loader--hide {
+    opacity: 0;
+}
+
+@keyframes load8 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

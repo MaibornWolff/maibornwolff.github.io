@@ -6,6 +6,7 @@ const ProjectsShown: React.FC = () => {
         <p className="lead">
             We love Open Source and want to give back with projects like{' '}
             <a
+                className="light-mode"
                 target="_blank"
                 href="https://github.com/MaibornWolff/clean-air"
                 rel="noreferrer"
@@ -14,6 +15,7 @@ const ProjectsShown: React.FC = () => {
             </a>{' '}
             and{' '}
             <a
+                className="light-mode"
                 target="_blank"
                 href="https://github.com/MaibornWolff/codecharta"
                 rel="noreferrer"

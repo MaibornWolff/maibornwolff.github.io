@@ -1,6 +1,5 @@
 import DarkMode from '../DarkMode/DarkMode';
 import React from 'react';
-import Toggle from '../Toggle/Toggle';
 import useDarkMode from 'use-dark-mode';
 
 interface darkmode {
@@ -12,7 +11,7 @@ interface darkmode {
     storageProvider: string | any;
 }
 
-const DarkModeToggle: React.FC = () => {
+const DarkModeImplement: React.FC = () => {
     const darkModeConfig: darkmode = {
         classNameDark: 'dark-mode',
         classNameLight: 'light-mode',
@@ -32,10 +31,6 @@ const DarkModeToggle: React.FC = () => {
             <button type="button" onClick={darkModeVariable.disable}>
                 ☀
             </button>
-            <Toggle
-                checked={darkModeVariable.value}
-                onClick={darkModeVariable.toggle}
-            />
             <button type="button" onClick={darkModeVariable.enable}>
                 ☾
             </button>
@@ -43,4 +38,4 @@ const DarkModeToggle: React.FC = () => {
     );
 };
 
-export default DarkModeToggle;
+export default DarkModeImplement;

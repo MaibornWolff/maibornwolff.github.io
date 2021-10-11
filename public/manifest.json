@@ -1,6 +1,18 @@
 {
-    "short_name": "React App",
-    "name": "Create React App Sample",
+    "short_name": "MW OSP",
+    "name": "MaibornWolff Open Source Projects",
+    "icons": [
+        {
+            "src": "./favicon.ico",
+            "type": "apple-touch-icon-precomposed",
+            "sizes": "16x16"
+        },
+        {
+            "src": "../src/favicon.ico",
+            "type": "image",
+            "sizes": "119x85"
+        }
+    ],
     "start_url": ".",
     "display": "standalone",
     "theme_color": "#000000",

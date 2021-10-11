@@ -82,7 +82,7 @@ body.light-mode {
 }
 body.dark-mode {
     color: white;
-    background-color: #666666;
+    background-color: #282828;
 }
 [tabindex='-1']:focus {
     outline: 0 !important;
@@ -163,9 +163,16 @@ sup {
     top: -0.5em;
 }
 a {
-    color: #666666;
     font-weight: bold;
     text-decoration: none;
+    background-color: transparent;
+}
+a.light-mode {
+    color: #666666 !important;
+    background-color: transparent;
+}
+a.dark-mode {
+    color: #ffffff !important;
     background-color: transparent;
 }
 a:hover {
@@ -227,10 +234,6 @@ label {
 }
 button {
     border-radius: 0;
-}
-button:focus {
-    outline: 1px dotted;
-    outline: 5px auto -webkit-focus-ring-color;
 }
 input,
 button,
@@ -555,8 +558,13 @@ pre code {
     align-content: center;
     padding: 2rem 1rem;
     margin-bottom: 2rem;
-    background-color: #f8f7f6;
     border-radius: 0;
+}
+.grey-info-box.light-mode {
+    background-color: #f8f7f6 !important;
+}
+.grey-info-box.dark-mode {
+    background-color: #464646 !important;
 }
 .row {
     display: -webkit-box;
@@ -850,8 +858,14 @@ pre code {
     display: block;
     border: none;
     font-weight: bold;
+}
+.source-home-button.light-mode {
     color: #666666;
     background-color: white;
+}
+.source-home-button.dark-mode {
+    color: #ffffff;
+    background-color: #282828;
 }
 @media (min-width: 576px) {
     .col-sm {
@@ -4113,6 +4127,7 @@ input[type='button'].btn-block {
     display: block;
     padding: 0.5rem 1rem;
 }
+
 .nav-link:hover,
 .nav-link:focus {
     text-decoration: none;
@@ -4185,6 +4200,7 @@ input[type='button'].btn-block {
     display: flex;
     flex-flow: row;
     justify-content: flex-end;
+    align-items: baseline;
 }
 
 .navbar {
@@ -4527,9 +4543,7 @@ input[type='button'].btn-block {
 .navbar-light .navbar-brand:focus {
     color: rgba(0, 0, 0, 0.9);
 }
-.navbar-light .navbar-nav .nav-link {
-    color: #666666;
-}
+
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link:focus {
     color: rgba(0, 0, 0, 0.7);
@@ -5236,7 +5250,7 @@ a.badge-dark.focus {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    height: 1rem;
+    height: 0.5rem;
     overflow: hidden;
     font-size: 0.75rem;
     background-color: #4e5d6c;
@@ -6471,15 +6485,6 @@ a.bg-danger:focus,
 button.bg-danger:hover,
 button.bg-danger:focus {
     background-color: #c9302c !important;
-}
-.bg-light {
-    background-color: white !important;
-}
-a.bg-light:hover,
-a.bg-light:focus,
-button.bg-light:hover,
-button.bg-light:focus {
-    background-color: #8d9dad !important;
 }
 .bg-dark {
     background-color: #4e5d6c !important;
