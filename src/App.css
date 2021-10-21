@@ -200,3 +200,6 @@ path {
         transform: rotate(360deg);
     }
 }
+.dark-toggle {
+    align-self: baseline;
+}

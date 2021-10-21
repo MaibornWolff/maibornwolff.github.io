@@ -3,17 +3,24 @@ import './App.css';
 
 import App from './App';
 import { Provider } from 'react-redux';
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import store from './app/store';
+import './i18n';
+
+const Loader: React.FC = () => {
+    return <div>loading...</div>;
+};
 
 //renders the app component in the HTML Element thi the id root
 //The Provider Element is needed for the use of "stores"
 ReactDOM.render(
     <Provider store={store}>
         <React.StrictMode>
-            <App />
+            <Suspense fallback={<Loader />}>
+                <App />
+            </Suspense>
         </React.StrictMode>
     </Provider>,
     document.getElementById('root')

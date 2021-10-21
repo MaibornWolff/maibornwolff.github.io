@@ -1,4 +1,5 @@
 import { Parallax } from 'react-parallax';
+import React from 'react';
 
 interface Props {
     backGroundImage: string;

@@ -15,12 +15,15 @@ const SearchFieldWrapper = () => {
     const data = useSelector(selectData);
     const dataSafe = useSelector(selectDataSafe);
     const dispatch = useDispatch();
+    let valueSafe: string = '';
 
     const onSearch = (value: string) => {
-        if (value === '') {
+        valueSafe = value;
+        if (value === '' || value !== valueSafe) {
             dispatch(setData(dataSafe));
-            return;
         }
+
+        valueSafe = value;
 
         const regexp = new RegExp(value, 'i'); //makes value case-insensitive
 
@@ -36,6 +39,9 @@ const SearchFieldWrapper = () => {
             }
         }
         dispatch(setData(newResultArray));
+        document
+            .getElementById('open-source-projects')
+            ?.scrollIntoView({ block: 'end', behavior: 'smooth' });
 
         return;
     };

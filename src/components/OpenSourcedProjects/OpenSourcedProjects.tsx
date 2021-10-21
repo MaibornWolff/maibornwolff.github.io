@@ -5,13 +5,17 @@ import React, { useEffect, useState } from 'react';
 import {
     selectData,
     setData,
-    setIsRendered,
     setDataSafe,
+    setIsRendered,
 } from './openSourceProjectsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 import CatErrorImage from '../CatErrorImage/CatErrorImage';
 import RenderCard from '../RenderCard/RenderCard';
+
+interface Props {
+    headline: string;
+}
 
 function getReposAsync() {
     return new Promise(function (resolve, reject) {
@@ -42,7 +46,7 @@ function getReposAsync() {
     });
 }
 
-const OpenSourcedProjects = () => {
+const OpenSourcedProjects: React.FC<Props> = (props) => {
     const dispatch = useDispatch();
     const data = useSelector(selectData);
     const [error, setError] = useState<boolean>(false);
@@ -83,7 +87,7 @@ const OpenSourcedProjects = () => {
 
     return (
         <>
-            <h3 id="headline-opensource-projects">Open sourced Projects</h3>
+            <h3 id="headline-opensource-projects">{props.headline}</h3>
             <div id="maibornwolff-opensource-projects" className="card-columns">
                 {cardOrCat()}
             </div>{' '}

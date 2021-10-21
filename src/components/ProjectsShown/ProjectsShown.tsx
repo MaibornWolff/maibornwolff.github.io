@@ -1,24 +1,29 @@
 import React from 'react';
 
-const ProjectsShown: React.FC = () => {
+interface Props {
+    text1: string;
+    text2: string;
+}
+
+const ProjectsShown: React.FC<Props> = (props) => {
     return (
         //Links 2 Projects at the beginning of the page
         <p className="lead">
-            We love Open Source and want to give back with projects like{' '}
+            <>{props.text1}</>{' '}
             <a
                 className="light-mode"
                 target="_blank"
                 href="https://github.com/MaibornWolff/clean-air"
-                rel="noreferrer"
+                rel="noopener noreferrer"
             >
                 CleanAir
             </a>{' '}
-            and{' '}
+            <>{props.text2}</>{' '}
             <a
                 className="light-mode"
                 target="_blank"
                 href="https://github.com/MaibornWolff/codecharta"
-                rel="noreferrer"
+                rel="noopener noreferrer"
             >
                 CodeCharta
             </a>

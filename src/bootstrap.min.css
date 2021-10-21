@@ -4200,7 +4200,6 @@ input[type='button'].btn-block {
     display: flex;
     flex-flow: row;
     justify-content: flex-end;
-    align-items: baseline;
 }
 
 .navbar {
