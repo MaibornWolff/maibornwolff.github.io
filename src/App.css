@@ -204,3 +204,12 @@ path {
     display: flex;
     justify-content: space-around;
 }
+@media (max-width: 576px) {
+    .remove {
+        display: none !important;
+    }
+}
+.dropdown-flex {
+    display: flex;
+    align-items: center;
+}

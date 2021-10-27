@@ -10,6 +10,14 @@ const DarkMode = () => {
 
     const applyDarkMode = () => {
         dispatch(setIsInLightMode(toggleTrueFalse));
+
+        document.body.classList.add(
+            toggleTrueFalse ? 'light-mode' : 'dark-mode'
+        ); //changes the Body
+        document.body.classList.remove(
+            toggleTrueFalse ? 'dark-mode' : 'light-mode'
+        );
+
         setToggleTrueFalse(!toggleTrueFalse);
     };
 

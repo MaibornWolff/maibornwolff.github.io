@@ -58,9 +58,11 @@ function App() {
                             </a>
 
                             <div className="navbar-right-content">
-                                <DropDown /> {/* see components folder */}
+                                <div className="nav-item dropdown-flex">
+                                    <DropDown /> {/* see components folder */}
+                                </div>
                                 <div
-                                    className="collapse navbar-collapse"
+                                    className="collapse navbar-collapse remove"
                                     id="navbar-maibornwolff-opensource"
                                 >
                                     <NavbarItem /> {/* see components folder */}
@@ -68,7 +70,7 @@ function App() {
                                 <div className="nav-item searchfield-flex">
                                     <SearchBar />
                                 </div>
-                                <div className="nav-bar-toggles">
+                                <div className="nav-bar-toggles remove">
                                     <LanguageToggle />
                                     <DarkMode /> {/* see components folder */}
                                 </div>
@@ -112,7 +114,14 @@ function App() {
                 <footer className="text-muted">
                     <div className="container">
                         <p className="float-right">
-                            <a href="#top-of-page">{t('footer.top')}</a>{' '}
+                            <a
+                                className={
+                                    isInLightMode ? 'light-mode' : 'dark-mode'
+                                }
+                                href="#top-of-page"
+                            >
+                                {t('footer.top')}
+                            </a>{' '}
                             {/* Links to top of page */}
                         </p>
                         <p>&copy; 2019-2020 MaibornWolff GmbH</p>

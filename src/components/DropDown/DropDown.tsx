@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import DropDownItems from '../DropDownItems/DropDownItems';
 import './DropDown.scss';
-
-let itemArr = [
-    { id: 0, title: 'Open Source Home', link: '/' },
-    { id: 1, title: 'Homepage', link: 'https://www.maibornwolff.de' },
-];
+import { useSelector } from 'react-redux';
+import { selectIsInLightMode } from '../DarkMode/DarkModeSlice';
+import NavbarItem from '../NavbarItem/NavbarItem';
+import LanguageToggle from '../LanguageToggle/LanguageToggle';
+import DarkMode from '../DarkMode/DarkMode';
 
 const DropDown: React.FC = () => {
     const [showList, setShowList] = useState<boolean>(false);
+    const isInLightMode = useSelector(selectIsInLightMode);
 
     const toggleShowList = () => {
         setShowList(!showList);
@@ -16,34 +16,40 @@ const DropDown: React.FC = () => {
 
     return (
         <div className="dd-container">
-            <button
-                className="navbar-toggler light-mode"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbar-maibornwolff-opensource"
-                aria-controls="navbar-maibornwolff-opensource"
-                aria-label="Toggle navigation"
-                onClick={toggleShowList}
+            <div className="block">
+                <button
+                    className={`navbar-toggler ${
+                        isInLightMode ? 'light-mode' : 'dark-mode'
+                    }`}
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbar-maibornwolff-opensource"
+                    aria-controls="navbar-maibornwolff-opensource"
+                    aria-label="Toggle navigation"
+                    onClick={toggleShowList}
+                >
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div
+                className={`${isInLightMode ? 'light-mode' : 'dark-mode'} ${
+                    showList ? 'list-show' : 'list-hide'
+                }`}
             >
-                <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="list-container">
-                {showList &&
-                    itemArr.map((itemArr) => {
-                        return (
-                            <div
-                                role="list"
-                                className="dd-list"
-                                key={itemArr.id}
-                            >
-                                <DropDownItems
-                                    id={itemArr.id}
-                                    link={itemArr.link}
-                                    title={itemArr.title}
-                                />
-                            </div>
-                        );
-                    })}
+                <div className="dropdown-items">
+                    <a
+                        className={`nav-link ${
+                            isInLightMode ? 'light-mode' : 'dark-mode'
+                        }`}
+                        href="https://www.maibornwolff.de"
+                    >
+                        Homepage
+                    </a>
+                    <div className="nav-bar-toggles">
+                        <LanguageToggle />
+                        <DarkMode /> {/* see components folder */}
+                    </div>
+                </div>
             </div>
         </div>
     );
