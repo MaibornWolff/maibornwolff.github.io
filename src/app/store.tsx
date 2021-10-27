@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import openSourceProjectsStateReducer from '../components/OpenSourcedProjects/openSourceProjectsSlice';
+import darkModeStateReducer from '../components/DarkMode/DarkModeSlice';
 
 const store = configureStore({
     reducer: {
         openSourceProjectState: openSourceProjectsStateReducer,
+        darkModeState: darkModeStateReducer,
     },
 });
 

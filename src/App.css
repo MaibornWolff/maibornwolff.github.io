@@ -139,27 +139,12 @@ footer p {
         max-height: auto !important;
     }
 }
-.search-bar.light-mode {
-    background-color: white;
-    color: #666666;
-}
-.search-bar.dark-mode {
-    background-color: #282828;
-    color: #ffffff;
-}
+
 .dark-mode-toggle {
     margin: auto 10px;
 }
 path {
     margin: auto auto;
-}
-.react-search-field-input.dark-mode {
-    background-color: #464646;
-    color: white;
-}
-.react-search-field-input.light-mode {
-    background-color: white;
-    color: #666666;
 }
 
 .invisible {
@@ -202,4 +187,20 @@ path {
 }
 .dark-toggle {
     align-self: baseline;
+}
+.nav-bar-toggles {
+    display: flex;
+    flex-flow: column wrap;
+    margin-left: 15px;
+}
+.nav-item {
+    align-self: auto;
+}
+.searchfield-flex {
+    display: flex;
+    align-items: center;
+}
+.darkmode-flex {
+    display: flex;
+    justify-content: space-around;
 }

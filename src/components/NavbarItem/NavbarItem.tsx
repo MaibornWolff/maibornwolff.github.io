@@ -5,16 +5,6 @@ const NavbarItem: React.FC = () => {
         //returns 2 Links that will be shown on the Navigation-Bar
         <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-                <button
-                    className="source-home-button nav-link light-mode"
-                    onClick={() => {
-                        window.location.href = '/';
-                    }}
-                >
-                    Open Source Home
-                </button>
-            </li>
-            <li className="nav-item">
                 <a
                     className="nav-link light-mode"
                     href="https://www.maibornwolff.de"

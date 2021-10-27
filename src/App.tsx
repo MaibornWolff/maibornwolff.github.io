@@ -8,28 +8,33 @@ import OpenSourcedProjects from './components/OpenSourcedProjects/OpenSourcedPro
 import ParallaxWithOverlay from './components/ParallaxWithOverlay/ParallaxWithOverlay';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import ProjectsShown from './components/ProjectsShown/ProjectsShown';
-import React, { useEffect } from 'react';
-import SearchFieldWrapper from './components/SearchFieldWrapper/SearchFieldWrapper';
+import React, { useCallback, useEffect, useState } from 'react';
+import SearchBar from './components/SearchBar/SearchBar';
 import ZenQuote from './components/CatPicture/CatPicture';
 import logo from './maibornwolff-logo.png';
 import windowCats from './window-cats.jpg';
 import { useTranslation } from 'react-i18next';
-import { useDispatch } from 'react-redux';
-import { setLanguage } from './components/OpenSourcedProjects/openSourceProjectsSlice';
+import { useSelector } from 'react-redux';
+import { selectLanguage } from './components/OpenSourcedProjects/openSourceProjectsSlice';
+import LanguageToggle from './components/LanguageToggle/LanguageToggle';
+import { selectIsInLightMode } from './components/DarkMode/DarkModeSlice';
 
 //import sleepyCat from './sleepy-cat.jpg'; //Back-up Picture because... You can never have too many cat pictures
 function App() {
     const { t, i18n } = useTranslation();
-    const dispatch = useDispatch();
+    const isInLightMode = useSelector(selectIsInLightMode);
+    const [lngSafe, setLngSafe] = useState<string>();
+    const lng = useSelector(selectLanguage);
+
+    if (lng !== lngSafe) {
+        i18n.changeLanguage(lng);
+        setLngSafe(lng);
+    }
 
     useEffect(() => {
         document.querySelector('.loader')?.classList.add('loader--hide');
     });
 
-    const changeLanguage = (lng: string) => {
-        i18n.changeLanguage(lng);
-        dispatch(setLanguage(lng));
-    };
     return (
         <>
             <>
@@ -51,18 +56,7 @@ function App() {
                                 ></img>{' '}
                                 {/* shows the maibornwolff logo at the top left corner. When clicked links to maibornwolff.de*/}
                             </a>
-                            <button
-                                type="button"
-                                onClick={() => changeLanguage('de')}
-                            >
-                                de
-                            </button>
-                            <button
-                                type="button"
-                                onClick={() => changeLanguage('en')}
-                            >
-                                en
-                            </button>
+
                             <div className="navbar-right-content">
                                 <DropDown /> {/* see components folder */}
                                 <div
@@ -71,8 +65,13 @@ function App() {
                                 >
                                     <NavbarItem /> {/* see components folder */}
                                 </div>
-                                <SearchFieldWrapper />
-                                <DarkMode /> {/* see components folder */}
+                                <div className="nav-item searchfield-flex">
+                                    <SearchBar />
+                                </div>
+                                <div className="nav-bar-toggles">
+                                    <LanguageToggle />
+                                    <DarkMode /> {/* see components folder */}
+                                </div>
                             </div>
                         </div>
                     </nav>
@@ -84,7 +83,11 @@ function App() {
                         backGroundImage={windowCats}
                         overlayText={t('body.jumbo-overlay')}
                     />
-                    <section className="grey-info-box light-mode">
+                    <section
+                        className={`grey-info-box ${
+                            isInLightMode ? 'light-mode' : 'dark-mode'
+                        }`}
+                    >
                         <div className="container">
                             <ProjectsShown
                                 text1={t('body.info-box-lead-1')}

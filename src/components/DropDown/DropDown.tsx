@@ -17,7 +17,7 @@ const DropDown: React.FC = () => {
     return (
         <div className="dd-container">
             <button
-                className="navbar-toggler"
+                className="navbar-toggler light-mode"
                 type="button"
                 data-toggle="collapse"
                 data-target="#navbar-maibornwolff-opensource"

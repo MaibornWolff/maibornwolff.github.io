@@ -3,8 +3,6 @@ import '../../bootstrap.min.css';
 
 import React from 'react';
 import Repository from '../utils';
-import { selectLanguage } from '../OpenSourcedProjects/openSourceProjectsSlice';
-import { useSelector } from 'react-redux';
 
 interface Props {
     repo: Repository;
@@ -13,7 +11,6 @@ interface Props {
 //Takes an array, sent as a prop from the OpenSourcedProjects component and displays it as a "Card"
 
 const RenderCard: React.FC<Props> = (props) => {
-    const lng = useSelector(selectLanguage);
     return (
         <div className="card border-primary mb-3">
             <div className="card-body">
