@@ -22,7 +22,7 @@ function getReposAsync() {
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.open(
             'GET',
-            'https://api.github.com/orgs/MaibornWolff/repos',
+            'https://api.github.com/orgs/MaibornWolff/repos?per_page=100',
             true
         ); // true for asynchronous
         xmlHttp.responseType = 'json';

@@ -8,6 +8,7 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import store from './app/store';
 import './i18n';
+import * as serviceWorker from './serviceWorker';
 
 const Loader: React.FC = () => {
     return <div>loading...</div>;
@@ -25,6 +26,8 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 );
+
+serviceWorker.register();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

@@ -1,6 +1,7 @@
 {
     "short_name": "MW OSP",
     "name": "MaibornWolff Open Source Projects",
+    "url": "maibornwolff.github.io",
     "icons": [
         {
             "src": "./favicon.ico",
