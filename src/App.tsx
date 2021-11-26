@@ -8,7 +8,7 @@ import OpenSourcedProjects from './components/OpenSourcedProjects/OpenSourcedPro
 import ParallaxWithOverlay from './components/ParallaxWithOverlay/ParallaxWithOverlay';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import ProjectsShown from './components/ProjectsShown/ProjectsShown';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SearchBar from './components/SearchBar/SearchBar';
 import ZenQuote from './components/CatPicture/CatPicture';
 import logo from './maibornwolff-logo.png';

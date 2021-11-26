@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './DropDown.scss';
 import { useSelector } from 'react-redux';
 import { selectIsInLightMode } from '../DarkMode/DarkModeSlice';
-import NavbarItem from '../NavbarItem/NavbarItem';
 import LanguageToggle from '../LanguageToggle/LanguageToggle';
 import DarkMode from '../DarkMode/DarkMode';
 

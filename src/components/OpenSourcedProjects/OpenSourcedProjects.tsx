@@ -3,8 +3,7 @@ import '../../App.css';
 
 import React, { useEffect, useState } from 'react';
 import {
-    selectData,
-    setData,
+    selectDataSafe,
     setDataSafe,
     setIsRendered,
 } from './openSourceProjectsSlice';
@@ -48,7 +47,7 @@ function getReposAsync() {
 
 const OpenSourcedProjects: React.FC<Props> = (props) => {
     const dispatch = useDispatch();
-    const data = useSelector(selectData);
+    const data = useSelector(selectDataSafe);
     const [error, setError] = useState<boolean>(false);
     const [errCode, setErrCode] = useState<number>(404);
 
@@ -57,7 +56,6 @@ const OpenSourcedProjects: React.FC<Props> = (props) => {
             .then(function (repoArr: any) {
                 const json = repoArr;
                 const data = json.filter((repo: any) => !repo.archived); //saves every array of Repository.json (repo) which isnt archived into data
-                dispatch(setData(data)); //saves the current data array into the global data array
                 dispatch(setDataSafe(data));
             })
             .catch(function (stat) {

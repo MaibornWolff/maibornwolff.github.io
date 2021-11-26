@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-    selectData,
     selectDataSafe,
     setData,
 } from '../OpenSourcedProjects/openSourceProjectsSlice';
@@ -40,7 +39,7 @@ const SearchIcon = () => {
 
 const SearchBar = () => {
     const dataSafe = useSelector(selectDataSafe);
-    const data = useSelector(selectData);
+
     const dispatch = useDispatch();
     const isInLightMode = useSelector(selectIsInLightMode);
 
@@ -51,13 +50,13 @@ const SearchBar = () => {
 
         const newResultArray: Array<Repository> = [];
 
-        for (let index = 0; index < data.length; index++) {
+        for (let index = 0; index < dataSafe.length; index++) {
             if (
-                regexp.test(data[index].description as string) ||
-                regexp.test(data[index].name as string) ||
-                regexp.test(data[index].language as string)
+                regexp.test(dataSafe[index].description as string) ||
+                regexp.test(dataSafe[index].name as string) ||
+                regexp.test(dataSafe[index].language as string)
             ) {
-                newResultArray.push(data[index]);
+                newResultArray.push(dataSafe[index]);
             }
         }
         dispatch(setData(newResultArray));
@@ -74,14 +73,12 @@ const SearchBar = () => {
 
     const keyPressHandler = (event: any) => {
         if (event.which === 13 || event.keyCode === 13) {
-            dispatch(setData(dataSafe));
             return search(value as string);
         }
         return;
     };
 
     const onButtonClickHandler = () => {
-        dispatch(setData(dataSafe));
         search(value as string);
     };
 
