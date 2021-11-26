@@ -2,71 +2,13 @@
     "name": "maibornwolff.github.io",
     "version": "0.1.0",
     "private": true,
-    "dependencies": {
-        "@babel/preset-env": "^7.15.6",
-        "@babel/preset-react": "^7.14.5",
-        "@reduxjs/toolkit": "^1.6.1",
-        "@testing-library/jest-dom": "^5.14.1",
-        "@testing-library/react": "^11.2.7",
-        "@testing-library/user-event": "^12.8.3",
-        "@types/jest": "^26.0.24",
-        "@types/node": "^12.20.24",
-        "@types/react": "^17.0.20",
-        "@types/react-dom": "^17.0.9",
-        "auto-i18n": "^1.0.0",
-        "bootstrap": "^5.1.1",
-        "cypress": "^8.5.0",
-        "i18next": "^21.3.0",
-        "normalize.css": "^8.0.1",
-        "prettier": "^2.4.0",
-        "react": "^17.0.2",
-        "react-bootstrap": "^2.0.0-rc.0",
-        "react-dark-mode-toggle": "^0.2.0",
-        "react-dom": "^17.0.2",
-        "react-i18next": "^11.12.0",
-        "react-parallax": "^3.3.0",
-        "react-redux": "^7.2.5",
-        "react-scripts": "^3.4.4",
-        "react-search-field": "^2.0.1",
-        "react-test-renderer": "^17.0.2",
-        "typescript": "^4.4.2",
-        "use-dark-mode": "^2.3.1",
-        "web-vitals": "^1.1.2"
-    },
+    "dependencies": {},
     "scripts": {
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d build",
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "fe_predeploy": "cd ./FE && npm run build",
+        "fe_deploy": "cd ./FE && npm run deploy",
+        "fe_start": "cd ./FE && npm run start",
+        "fe_build": "cd ./FE && npm run build",
+        "fe_test": "cd ./FE && npm run test"
     },
-    "prettier": {
-        "trailingComma": "es5",
-        "tabWidth": 4,
-        "semi": true,
-        "singleQuote": true
-    },
-    "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
-        ]
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    },
-    "devDependencies": {
-        "gh-pages": "^3.2.3",
-        "sass": "^1.40.1"
-    }
+    "devDependencies": {}
 }
