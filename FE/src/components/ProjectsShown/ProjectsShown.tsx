@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { selectIsInLightMode } from '../DarkMode/DarkModeSlice';
 
 interface Props {
+    headline: string;
     text1: string;
     text2: string;
 }
@@ -12,6 +13,7 @@ const ProjectsShown: React.FC<Props> = (props) => {
     return (
         //Links 2 Projects at the beginning of the page
         <p className="lead">
+            <h3 className={isInLightMode ? 'headline' : 'headline-dark'}>{props.headline}</h3>{' '}
             <>{props.text1}</>{' '}
             <a
                 className={isInLightMode ? 'light-mode' : 'dark-mode'}

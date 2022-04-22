@@ -11,20 +11,21 @@ import ProjectsShown from './components/ProjectsShown/ProjectsShown';
 import React, { useEffect, useState } from 'react';
 import SearchBar from './components/SearchBar/SearchBar';
 import ZenQuote from './components/CatPicture/CatPicture';
-import logo from './maibornwolff-logo.png';
-import windowCats from './window-cats.jpg';
+import logo from './assets/images/maibornwolff-logo.png';
+import logoDark from './assets/images/maibornwolff-logo-black.png';
+import paintExplosion from './assets/images/farbexplosion.jpg';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { selectLanguage } from './components/OpenSourcedProjects/openSourceProjectsSlice';
 import LanguageToggle from './components/LanguageToggle/LanguageToggle';
 import { selectIsInLightMode } from './components/DarkMode/DarkModeSlice';
 
-//import sleepyCat from './sleepy-cat.jpg'; //Back-up Picture because... You can never have too many cat pictures
 function App() {
     const { t, i18n } = useTranslation();
     const isInLightMode = useSelector(selectIsInLightMode);
     const [lngSafe, setLngSafe] = useState<string>();
     const lng = useSelector(selectLanguage);
+    const currentYear = new Date().getFullYear();
 
     if (lng !== lngSafe) {
         i18n.changeLanguage(lng);
@@ -49,8 +50,7 @@ function App() {
                                 className="navbar-brand"
                                 href="https://www.maibornwolff.de"
                             >
-                                <img
-                                    src={logo}
+                                <img src={isInLightMode? logoDark : logo}
                                     className="mwlogo"
                                     alt="maibornwolffs logo"
                                 ></img>{' '}
@@ -82,8 +82,7 @@ function App() {
                     {' '}
                     {/* see components folder */}
                     <ParallaxWithOverlay
-                        backGroundImage={windowCats}
-                        overlayText={t('body.jumbo-overlay')}
+                        backGroundImage={paintExplosion}
                     />
                     <section
                         className={`grey-info-box ${
@@ -92,6 +91,7 @@ function App() {
                     >
                         <div className="container">
                             <ProjectsShown
+                                headline={t('body.jumbo-overlay')}
                                 text1={t('body.info-box-lead-1')}
                                 text2={t('body.info-box-lead-2')}
                             />
@@ -124,7 +124,8 @@ function App() {
                             </a>{' '}
                             {/* Links to top of page */}
                         </p>
-                        <p>&copy; 2019-2020 MaibornWolff GmbH</p>
+                        <p className={isInLightMode ? 'light-mode' : 'dark-mode'}>
+                            &copy; 2019-{currentYear} MaibornWolff GmbH </p>
                     </div>
                 </footer>
             </>

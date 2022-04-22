@@ -3,6 +3,13 @@
     display: flex;
     width: 100%;
 }
+
+.card-columns .card-dark {
+    margin-bottom: 0.75rem;
+    display: flex;
+    width: 100%;
+}
+
 @media (min-width: 576px) {
     .card-columns {
         display: flex;
@@ -23,13 +30,29 @@
         display: flex;
         width: 45%;
     }
+    .card-columns .card-dark {
+        display: flex;
+        width: 45%;
+    }
 }
 @media (min-width: 1200px) {
     .card-columns .card {
         display: flex;
         width: 30%;
     }
+    .card-columns .card-dark {
+        display: flex;
+        width: 30%;
+    }
 }
 #headline-opensource-projects {
     align-self: center;
+}
+
+.headline {
+    color: rgba(30, 25, 75, 0.9);
+}
+
+.headline-dark {
+    color: rgba(130, 200, 100, 0.9);
 }
