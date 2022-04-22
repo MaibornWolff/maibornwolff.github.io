@@ -106,6 +106,14 @@ p {
     margin-top: 0;
     margin-bottom: 1rem;
 }
+p.light-mode {
+    color: #666666 !important;
+    background-color: transparent;
+}
+p.dark-mode {
+    color: #ffffff !important;
+    background-color: transparent;
+}
 abbr[title],
 abbr[data-original-title] {
     text-decoration: underline;
@@ -365,7 +373,7 @@ h2,
 }
 h3,
 .h3 {
-    color: #128687;
+    color: rgba(30, 25, 75, 0.9);
     font-size: 35px;
     margin: 55px 0 40px 0;
 }
@@ -5110,7 +5118,7 @@ a.badge-dark.focus {
 }
 .jumbotron {
     padding: 2rem 1rem;
-    background-color: rgba(18, 135, 135, 0.8);
+    background-color: transparent;
     border-radius: 0;
 }
 @media (min-width: 576px) {

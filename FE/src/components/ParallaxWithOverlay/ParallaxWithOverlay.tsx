@@ -3,7 +3,6 @@ import React from 'react';
 
 interface Props {
     backGroundImage: string;
-    overlayText: string;
 }
 
 const ParallaxWithOverlay: React.FC<Props> = (props) => {
@@ -19,13 +18,6 @@ const ParallaxWithOverlay: React.FC<Props> = (props) => {
                 strength={400}
                 bgImageStyle={{ top: '-60%' }}
             >
-                <section className="jumbotron text-center">
-                    <div className="container">
-                        <h2 className="jumbotron-heading">
-                            {props.overlayText}
-                        </h2>
-                    </div>
-                </section>
             </Parallax>
         </div>
     );

@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import CatErrorImage from '../CatErrorImage/CatErrorImage';
 import RenderCard from '../RenderCard/RenderCard';
+import { selectIsInLightMode } from '../DarkMode/DarkModeSlice';
 
 interface Props {
     headline: string;
@@ -50,6 +51,7 @@ const OpenSourcedProjects: React.FC<Props> = (props) => {
     const data = useSelector(selectDataSafe);
     const [error, setError] = useState<boolean>(false);
     const [errCode, setErrCode] = useState<number>(404);
+    const isInLightMode = useSelector(selectIsInLightMode);
 
     useEffect(() => {
         getReposAsync()
@@ -85,7 +87,10 @@ const OpenSourcedProjects: React.FC<Props> = (props) => {
 
     return (
         <>
-            <h3 id="headline-opensource-projects">{props.headline}</h3>
+            <h3
+             className={`headline ${
+                isInLightMode ? 'headline' : 'headline-dark'
+            }`} id="headline-opensource-projects">{props.headline}</h3>
             <div id="maibornwolff-opensource-projects" className="card-columns">
                 {cardOrCat()}
             </div>{' '}

@@ -9,7 +9,24 @@
     flex-flow: row wrap;
     min-width: 0;
     word-wrap: break-word;
-    background-color: rgba(18, 135, 135, 0.9);
+    background-color: rgba(30, 25, 75, 0.9);
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0;
+}
+
+.card-dark {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row, wrap;
+    flex-flow: row wrap;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: rgba(130, 200, 100, 0.9);
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0;
@@ -34,6 +51,11 @@
     margin-bottom: 0.75rem;
     color: white;
 }
+.card-title-dark {
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+    color: black;
+}
 .card-subtitle {
     margin-top: -0.375rem;
     margin-bottom: 0;
@@ -45,12 +67,22 @@
 .text-muted {
     color: rgba(255, 255, 255, 0.4) !important;
 }
+.text-muted-dark {
+    color: black !important;
+}
 .card-text {
     color: white;
+}
+.card-text-dark {
+    color: black;
 }
 .card-text:last-child {
     margin-bottom: 0;
 }
+.link-dark {
+    color: #000;
+}
+
 .card-link:hover {
     text-decoration: none;
 }
