@@ -1,0 +1,31 @@
+.search-bar {
+    display: flex;
+    justify-content: center;
+}
+.search-field {
+    border: 1px #666666 solid;
+}
+.search-field.light-mode {
+    color: #666666;
+    background-color: #f8f7f6;
+}
+.search-field.dark-mode {
+    color: white;
+    background-color: #464646;
+}
+.search-button {
+    border: 1px #666666 solid;
+    height: 33px;
+    width: 33px;
+    cursor: pointer;
+    padding: 5;
+    box-sizing: border-box;
+    appearance: 'none';
+    border: 'none';
+}
+.search-button.light-mode {
+    background-color: #f8f7f6;
+}
+.search-button.dark-mode {
+    background: #464646;
+}

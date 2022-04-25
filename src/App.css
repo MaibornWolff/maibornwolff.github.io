@@ -1,0 +1,215 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.jumbotron {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: #fff;
+    z-index: 1;
+}
+@media (min-width: 768px) {
+    .jumbotron {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+}
+
+.jumbotron p:last-child {
+    margin-bottom: 0;
+}
+
+.jumbotron-heading {
+    font-weight: 300;
+    font-size: 20px;
+    color: white !important;
+    line-height: normal;
+    text-align: center;
+}
+@media (min-width: 400px) {
+    .jumbotron-heading {
+        font-size: 30px;
+    }
+}
+@media (min-width: 480px) {
+    .jumbotron-heading {
+        font-size: 45px;
+    }
+}
+@media (min-width: 720px) {
+    .jumbotron-heading {
+        font-size: 60px;
+    }
+}
+@media (min-width: 1100px) {
+    .jumbotron-heading {
+        font-size: 80px;
+    }
+}
+.jumbotron .container {
+    position: relative;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+footer p {
+    margin-bottom: 0.25rem;
+}
+.react-parallax-bgimage {
+    position: absolute;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    background-size: 120% auto;
+    z-index: -1;
+}
+.bgimage {
+    position: absolute;
+    background-position: top right;
+    left: auto;
+    right: auto;
+    bottom: 0;
+    height: 70vh;
+    width: 100%;
+    z-index: -1;
+}
+.parallax-container {
+    position: relative;
+    overflow: hidden;
+    height: 30vh;
+    width: 100%;
+}
+@media (min-width: 480px) {
+    .parallax-container {
+        height: 45vh;
+    }
+}
+@media (min-width: 720px) {
+    .parallax-container {
+        height: 55vh;
+    }
+}
+.mwlogo {
+    max-width: 119px;
+    max-height: auto;
+}
+@media (max-width: 720px) {
+    .mwlogo {
+        max-width: 60px !important;
+        max-height: auto !important;
+    }
+}
+
+.dark-mode-toggle {
+    margin: auto 10px;
+}
+path {
+    margin: auto auto;
+}
+
+.invisible {
+    opacity: 0;
+}
+.cat-error-img {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-self: center;
+
+    justify-content: space-evenly;
+    -webkit-column-count: 1;
+    column-count: 1;
+}
+.loader {
+    position: absolute;
+    top: calc(50% - 4em);
+    left: calc(50% - 4em);
+    width: 6em;
+    height: 6em;
+    border: 1.1em solid rgba(0, 0, 0, 0.2);
+    border-left: 1.1em solid #000000;
+    border-radius: 50%;
+    animation: load8 1.1s infinite linear;
+    transition: opacity 0.1s;
+}
+
+.loader--hide {
+    opacity: 0;
+}
+
+@keyframes load8 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.dark-toggle {
+    align-self: baseline;
+}
+.nav-bar-toggles {
+    display: flex;
+    flex-flow: column wrap;
+    margin-left: 15px;
+}
+.nav-item {
+    align-self: auto;
+}
+.searchfield-flex {
+    display: flex;
+    align-items: center;
+}
+.darkmode-flex {
+    display: flex;
+    justify-content: space-around;
+}
+@media (max-width: 576px) {
+    .remove {
+        display: none !important;
+    }
+}
+.dropdown-flex {
+    display: flex;
+    align-items: center;
+}
